@@ -18,12 +18,27 @@ $(document).ready(function() {
 				$(this).hide();
 				$(this).css('left', '550px');
 		});
-		//play hadouken sound
-		//show hadouken and animate it to the right
 	});
 	$('.ryu').mouseup(function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
+	});
+	$(document).keydown(function(event) {
+		console.log(event.which);
+		if (event.which == 88) {
+			console.log("X key pressed");
+			$('.ryu-action').hide();
+			$('.ryu-cool').show();
+		};
+
+	});
+	$(document).keyup(function(event) {
+		console.log(event.which);
+		if (event.which == 88) {
+			console.log("X key released");
+			$('.ryu-action').hide();
+			$('.ryu-still').show();
+		};
 	});
 });
 
